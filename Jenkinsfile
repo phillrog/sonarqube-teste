@@ -3,7 +3,7 @@ pipeline {
     stages {        
         stage('Restore packages') {
             steps {
-                bat "dotnet restore ${workspace}\\sonarqube-teste\\calculadora.sln"
+                bat "dotnet restore ${workspace}\\calculadora.sln"
             }
         }  
     }
