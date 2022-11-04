@@ -11,6 +11,8 @@ namespace calculadora
         {
             var calculadora = new CalculadoraService();
             Console.WriteLine(calculadora.Desmonstracao(100, 100));
+
+            Console.WriteLine(calculadora.Potencia(10, 100));
         }
     }
 }

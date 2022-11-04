@@ -7,5 +7,6 @@
         public int Dividir(int a, int b);
         public int Multiplicar(int a, int b);
         public string Desmonstracao(int a, int b);
+        public double Potencia(double a, double b);
     }
 }

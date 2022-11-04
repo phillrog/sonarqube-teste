@@ -13,5 +13,10 @@ namespace calculadora
         {
             return $"Somar 1 + 1 = {Somar(a, b)}\r\nSubtrair 10 - 1 = {Subtrair(a, b)}\r\nDividir 100 / 10 = {Dividir(a, b)}\r\nMultiplicar 100 * 100 = {Multiplicar(a, b)}\r\n";
         }
+
+        public double Potencia(double a, double b)
+        {
+            return Math.Pow(a, b);
+        }
     }
 }
