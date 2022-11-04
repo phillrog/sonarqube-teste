@@ -1,10 +1,15 @@
 pipeline {
     agent any
     stages {
-        stage('Teste') {
+        stage('Limpar WS') {
             steps {
-                bat 'echo Olá Mundo'
+                cleanWs()
             }
-        }       
+        }     
+        stage('Restore packages') {
+            steps {
+                bat "dotnet restore ${workspace}\\calculadora.sln"
+            }
+        }  
     }
 }
