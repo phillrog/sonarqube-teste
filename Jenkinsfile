@@ -6,12 +6,16 @@ pipeline {
                 bat "dotnet restore ${workspace}\\calculadora.sln"
             }
         }
+        stage('SonarQube analysis') {
+			withSonarQubeEnv('sonarqube') {
+				bat 'dotnet sonarscanner begin /k:"calculadora" /d:sonar.host.url="http://localhost:9000"  /d:sonar.login="8319ba21ba9b1b5c483956987193fbbaeee76790"'
+			}
+
+		}
         stage('Build') {
             steps {
-                bat 'dotnet tool install --global dotnet-sonarscanner'
-                bat 'dotnet sonarscanner begin /k:"calculadora" /d:sonar.host.url="${url_sonar}"  /d:sonar.login="${login_sonar}"'
                 bat 'dotnet build --configuration Release'
-                bat 'dotnet sonarscanner end /d:sonar.login="${login_sonar}"'
+                bat 'dotnet sonarscanner end /d:sonar.login="8319ba21ba9b1b5c483956987193fbbaeee76790"'
             }
         }
     }
