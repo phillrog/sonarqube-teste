@@ -7,7 +7,7 @@ pipeline {
             }
         }
         stage('SonarQube analysis') {
-			steps('sonarqube') {
+			steps {
 				bat 'dotnet sonarscanner begin /k:"calculadora" /d:sonar.host.url="http://localhost:9000"  /d:sonar.login="8319ba21ba9b1b5c483956987193fbbaeee76790"'
 			}
 
